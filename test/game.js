@@ -1,9 +1,9 @@
 
-import Chai from "chai";
-import Game from "../game.js";
+const chai = require('chai');
+const Game = require("../game.js");
 
 
-const expect = Chai.expect;
+const expect = chai.expect;
 let game = new Game();
 describe('Game engine test', () => {
 

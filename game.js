@@ -1,5 +1,5 @@
 
-export default class Game {
+ class Game {
 
     guess(letter){
         if (letter === "a"){
@@ -9,3 +9,4 @@ export default class Game {
     }
 }
 
+module.exports = Game;
