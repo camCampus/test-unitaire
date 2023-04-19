@@ -1,0 +1,63 @@
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100%;
+    background-color: lightslategray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#game {
+    height: fit-content;
+    width: 80%;
+    background-color: azure;
+    border-radius: 15px;
+    margin: 1vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#select-diff {
+    min-height: 5vh;
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+#select-diff > * {
+    height: fit-content;
+    width: fit-content;
+    font-size: 3rem;
+    background-color: midnightblue;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+.letter {
+    height: fit-content;
+    width: 100%;
+    font-size: calc(5rem + 10vw);
+    text-align: center;
+}
+
+
+
+
+
+#word {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+}
