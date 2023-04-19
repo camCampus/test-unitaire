@@ -1,7 +1,6 @@
 
-const chai = require('chai');
-const Game = require("../game.js");
-
+import * as chai from "chai";
+import Game, {EASY, HARD, MEDIUM} from "../game.js";
 
 const expect = chai.expect;
 let game = new Game();
@@ -17,4 +16,24 @@ describe('Game engine test', () => {
             expect(game.guess("b")).is.false;
         })
     })
+
+    describe("Check difficulty choice", () => {
+        it('The word has the good length for easy', () => {
+            expect(game.getRandomWord(EASY).length).lessThanOrEqual(5);
+        })
+    })
+
+    describe("Check difficulty choice", () => {
+        it('The word has the good length for medium', () => {
+            expect(game.getRandomWord(MEDIUM).length).greaterThan(5).lessThanOrEqual(7);
+        })
+    })
+
+    describe("Check difficulty choice", () => {
+        it('The word has the good length for hard', () => {
+            expect(game.getRandomWord(HARD).length).greaterThan(7);
+        })
+    })
+
 })
+
