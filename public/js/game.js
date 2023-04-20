@@ -1,36 +1,20 @@
-export const WORDLIST = [
-    "aba",
-    "pate",
-    "croute",
-    "lol",
-    'pardon',
-    "bonjour",
-    "puissance",
-    'quatre',
-    "aqueducs",
-    "bavardes",
-    "abaque",
-    "beigne",
-    "cadeau"
-
-]
-
 export const EASY = "1";
 export const MEDIUM = "2";
 export const HARD = "3";
 
-
 export default class Game {
 
-    constructor(diff) {
+    constructor(diff, wordList) {
+        this.wordList = wordList
         this.wordToGuess = this.getRandomWord(diff).split('');
+        this.hashWord();
     }
 
 
     hashWordGuess;
     matchIndex = [];
     maxTry;
-    numbOfTry;
+    numbOfTry = 0;
 
 
 
@@ -68,8 +52,8 @@ export default class Game {
     }
 
     randomWord() {
-        let random = Math.floor(Math.random() * WORDLIST.length);
-        return WORDLIST[random];
+        let random = Math.floor(Math.random() * this.wordList.length);
+        return this.wordList[random];
     }
 
 
@@ -94,12 +78,13 @@ export default class Game {
     }
 
     updateHashWord() {
-        this.checkIfLetterIsOnTheWord(this.wordToGuess[0]);
+        //this.checkIfLetterIsOnTheWord(this.wordToGuess[0]);
         let myHash = [...this.hashWordGuess];
 
         this.macthIndex.forEach((e) => {
             myHash[e] = this.wordToGuess[e];
         })
+        this.hashWordGuess = [...myHash];
         return myHash;
     }
 
