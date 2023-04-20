@@ -1,21 +1,22 @@
 import Game from "./game.js";
 
+
 let gameContainer = document.querySelector("#word");
 let diffContainer = document.querySelector("#select-diff")
 
-let game = new Game();
+
 let playerDiff;
 
-game.hashWord();
 
 function initGame(id) {
-    game.getRandomWord(id);
+    let game = new Game(id);
     game.hashWord()
+
+    return game;
 }
 
-function displayHashWord() {
+function displayHashWord(game) {
     game.hashWordGuess.forEach((letter) => {
-        console.log(typeof letter)
         let div = document.createElement('div');
         div.classList.add('letter');
         div.innerText += letter;
@@ -25,9 +26,10 @@ function displayHashWord() {
 
 diffContainer.childNodes.forEach((child) => {
     child.addEventListener('click', () => {
-        initGame(child.id);
+        let actualGame = initGame(child.id);
         diffContainer.style.display = "none";
-        displayHashWord();
+        displayHashWord(actualGame);
+        console.log(game.wordToGuess)
     })
 })
 

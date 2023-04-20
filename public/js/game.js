@@ -15,16 +15,23 @@ export const WORDLIST = [
 
 ]
 
-export const EASY = 1;
-export const MEDIUM = 2;
-export const HARD = 3;
+export const EASY = "1";
+export const MEDIUM = "2";
+export const HARD = "3";
 
 
 export default class Game {
 
-    wordToGuess;
+    constructor(diff) {
+        this.wordToGuess = this.getRandomWord(diff).split('');
+    }
+
+
     hashWordGuess;
     matchIndex = [];
+    maxTry;
+    numbOfTry;
+
 
 
     getRandomWord(difficulty) {
@@ -32,29 +39,31 @@ export default class Game {
 
         switch (difficulty) {
             case EASY:
+                this.maxTry = 8;
                 do {
-                    word = this.randomWord()
+                    word = this.randomWord();
 
                 } while (word.length > 5)
 
-                return word
+                return word;
 
             case MEDIUM:
+                this.maxTry = 6;
                 do {
-                    word = this.randomWord()
+                    word = this.randomWord();
 
                 } while (word.length <= 5 || word.length > 7)
 
-                return word
+                return word;
 
             case HARD:
+                this.maxTry = 4;
                 do {
-                    word = this.randomWord()
+                    word = this.randomWord();
 
                 } while (word.length <= 7)
 
-
-                return word
+                return word;
         }
     }
 
@@ -85,7 +94,7 @@ export default class Game {
     }
 
     updateHashWord() {
-        this.checkIfLetterIsOnTheWord("a");
+        this.checkIfLetterIsOnTheWord(this.wordToGuess[0]);
         let myHash = [...this.hashWordGuess];
 
         this.macthIndex.forEach((e) => {
@@ -93,5 +102,10 @@ export default class Game {
         })
         return myHash;
     }
+
+    isGameOver(numbOfTry) {
+        return numbOfTry > this.maxTry;
+    }
 }
+
 
