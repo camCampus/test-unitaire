@@ -5,13 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="0f710bd8-d254-4d47-86aa-6640798beac3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.github/workflows/node.js.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/coverage/tmp/coverage-31072-1681915225550-0.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/public/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/test/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/test/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.github/workflows/node.js.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/node.js.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,7 +74,7 @@
       <workItem from="1681825538698" duration="1069000" />
       <workItem from="1681826608198" duration="3358000" />
       <workItem from="1681888257957" duration="28296000" />
-      <workItem from="1681975061533" duration="7481000" />
+      <workItem from="1681975061533" duration="7671000" />
     </task>
     <servers />
   </component>
